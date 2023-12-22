@@ -7,15 +7,18 @@ Printer_Fudge = 1.02;
 /* [Hardware] */ 
 Screw_thread = 3;
 Heatset_Diameter = 4.2;
+/* [Hidden] */
+$fn=36;
+
 difference(){
     union(){    
         difference() {//Verticle
                 cylinder(h = Conduit_Diameter*5, d = Conduit_Diameter+(Shell_Thickness*2));
-                translate([-(Conduit_Diameter/2+Shell_Thickness),0,0]) rotate([0,-45,0]) translate([0,0,-Conduit_Diameter/2-Shell_Thickness]) cube([Conduit_Diameter*8,Conduit_Diameter+Shell_Thickness*2,Conduit_Diameter+Shell_Thickness*2],center=true);
+                translate([-(Conduit_Diameter/2+Shell_Thickness),0,0]) rotate([0,-45,0]) translate([0,0,-Conduit_Diameter/2-Shell_Thickness+0.01]) cube([Conduit_Diameter*8,Conduit_Diameter+Shell_Thickness*2,Conduit_Diameter+Shell_Thickness*2],center=true);
             }
         difference() {//Horizontal
                 translate([-(Conduit_Diameter/2)-Shell_Thickness,0,+Conduit_Diameter/2+Shell_Thickness]) rotate([0,90,0])cylinder(h = Conduit_Diameter*5, d = Conduit_Diameter+(Shell_Thickness*2));
-                translate([-(Conduit_Diameter/2+Shell_Thickness),0,0]) rotate([0,-45,0]) translate([0,0,(Conduit_Diameter+2*Shell_Thickness)/2]) cube([Conduit_Diameter*8,Conduit_Diameter+Shell_Thickness*2,Conduit_Diameter+2*Shell_Thickness],center=true);
+                translate([-(Conduit_Diameter/2+Shell_Thickness),0,0]) rotate([0,-45,0]) translate([0,0,(Conduit_Diameter+2*Shell_Thickness)/2-.01]) cube([Conduit_Diameter*8,Conduit_Diameter+Shell_Thickness*2,Conduit_Diameter+2*Shell_Thickness],center=true);
                 
             }
     }
