@@ -3,7 +3,7 @@ Shell_Thickness = 5;
 
 /* [Conduit] */
 Conduit_Diameter = 18.5;
-Printer_Fudge = 1.2;
+Printer_Fudge = 1.02;
 /* [Hardware] */ 
 Screw_thread = 3;
 Heatset_Diameter = 4.2;
